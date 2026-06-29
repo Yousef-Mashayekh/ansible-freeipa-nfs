@@ -1,0 +1,23 @@
+---
+- name: Create Users
+  hosts: ipaserver
+  become: yes
+  
+  tasks:
+
+    - name: Create user alice
+      freeipa.ansible_freeipa.ipauser:
+        name: alice
+        first: Alice 
+        last: Smith
+        password: 'Alice123!'
+        state: present
+             
+    - name: Create user Bob
+      freeipa.ansible_freeipa.ipauser:
+        name: bob
+        first: Bob
+        last: Jones
+        password: 'Bob123!'
+        state: present
+            
