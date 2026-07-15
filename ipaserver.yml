@@ -1,0 +1,3 @@
+- hosts: ipaserver
+  roles:
+    - freeipa.ansible_freeipa.ipaserver

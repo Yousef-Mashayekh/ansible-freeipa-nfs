@@ -5,3 +5,8 @@ ipaserver_dir_manager_password: 'SecureDMPass1!'
 ipaserver_ip: 10.1.23.172 # IP of your IPA server
 nfs_export_dir: /home # Directory to export over NFS
 nfs_server_ip: 10.1.23.172 # Same as IPA server in this lab
+ipaserver_setup_dns: true
+ipaserver_auto_forwarders: true
+ipaserver_no_dnssec_validation: true
+ipaadmin_password: 'SecureAdminPass1!'
+ipadm_password: "{{ ipaserver_dir_manager_password }}"
