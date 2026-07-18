@@ -1,0 +1,17 @@
+---
+- name: Create IPA Users
+  hosts: ipaserver
+  vars_files:
+    - /home/ansible/ansible-freeipa-nfs/group_vars/user_passwords.yml
+    - /home/ansible/ansible-freeipa-nfs/group_vars/user_list.yml  
+
+  tasks:
+  
+    - name: Create Users
+      freeipa.ansible_freeipa.ipauser:
+        name: "{{ item.username }}"
+        first: "{{ item.first }}"
+        last: "{{ item.last }}"
+        password: "{{ item.password }}"
+        state: present
+      loop: "{{ users }}"

@@ -1,0 +1,12 @@
+---
+users:
+  - username: alice
+    first: Alice
+    last: Smith
+    password: "{{ alice_pw}}"
+    
+  - username: bob
+    first: Bob
+    last: Jones
+    password: "{{ bob_pw }}" 
+ 
