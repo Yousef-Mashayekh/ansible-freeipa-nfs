@@ -1,2 +1,19 @@
 ---
 # vars file for roles/nfs_server
+
+nfs_packages:
+  - name: nfs-utils
+  - name: autofs
+
+nfs_services:
+  - name: nfs-server
+    state: started
+    enabled: true
+  - name: rpcbind
+    state: started
+    enabled: true
+
+firewall_services:
+  - name: nfs
+  - name: mountd
+  - name: rpc-bind

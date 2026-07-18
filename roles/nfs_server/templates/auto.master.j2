@@ -1,0 +1,12 @@
+#This is some default boilerplate mess i dont need
+#/misc  /etc/auto.misc
+
+#this
+/net    -hosts
+
+#allows me to add any other rules i want to a file in the /etc/auto.master.d file
+#named .autofs without touching the -host map
++dir:/etc/auto.master.d
+
+#point autofs to IPA as the source of home directories
++auto.master
