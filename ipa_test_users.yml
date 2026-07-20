@@ -1,0 +1,3 @@
+ipa_test_users:
+  - { username: alice, first: Alice, last: Smith, password: "Alice123!" }
+  - { username: bob, first: Bob, last: Jones, password: "Bob123!" }

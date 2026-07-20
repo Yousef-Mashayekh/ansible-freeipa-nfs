@@ -13,5 +13,16 @@
         first: "{{ item.first }}"
         last: "{{ item.last }}"
         password: "{{ item.password }}"
+        homedir: "{{ item.homedirectory }}"
         state: present
+      loop: "{{ users }}"
+
+    - name: Create home directory on designated host
+      ansible.builtin.file:
+        path: /home/{{ item.username }}
+        state: directory
+        owner: "{{ item.username }}"
+        group: "{{ item.username }}"
+        mode: '0700'
+      delegate_to: "{{ item.home_host }}"
       loop: "{{ users }}"

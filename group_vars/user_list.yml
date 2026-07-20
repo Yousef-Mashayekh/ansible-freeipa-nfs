@@ -4,9 +4,12 @@ users:
     first: Alice
     last: Smith
     password: "{{ alice_pw}}"
-    
+    homedirectory: /net/ym-client1/alice
+    home_host: ym-client1.lab.local    
+
   - username: bob
     first: Bob
     last: Jones
     password: "{{ bob_pw }}" 
- 
+    homedirectory: /net/ym-client3/bob
+    home_host: ym-client3.lab.local

@@ -1,3 +1,9 @@
-ipaclient_domain: "{{ ipaserver_domain }}"
-ipaclient_realm: "{{ ipaserver_realm }}"
+ipaserver_domain: "lab.local"
+ipaserver_realm: "LAB.LOCAL"
+ipaclient_domain: "lab.local"
+ipaclient_realm: "LAB.LOCAL"
+ipaclient_servers: "ipa-server.lab.local"
 ipaclient_admin_password: "{{ ipaserver_admin_password }}"
+ipadm_password: "{{ ipaserver_admin_password }}"
+ipaclient_mkhomedir: true # Automatically creates home directories on first login
+ipaadmin_password: "{{ ipaserver_admin_password }}"
