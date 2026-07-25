@@ -9,4 +9,4 @@ ipaserver_setup_dns: true
 ipaserver_auto_forwarders: true
 ipaserver_no_dnssec_validation: true
 ipaadmin_password: 'SecureAdminPass1!'
-ipadm_password: "{{ ipaserver_dir_manager_password }}"
+ipadm_password: 'SecureDMPass1!'

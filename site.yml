@@ -1,8 +1,18 @@
 ---
-- name: Run nfs_server role
-  hosts: all
-  become: yes
+# Master Orchestration Playbook
+# Builds the entire FreeIPA + NFS + Autofs + User environment end‑to‑end
 
+- name: Deploy FreeIPA Server
+  import_playbook: ./collections/ansible_collections/freeipa/ansible_freeipa/playbooks/install-server.yml
+
+- name: Enroll FreeIPA Clients
+  import_playbook: ./collections/ansible_collections/freeipa/ansible_freeipa/playbooks/install-client.yml
+
+- name: Configure NFS Server
+  hosts: nfsserver
+  become: true
   roles:
-    - nfs_server 
+    - nfs_server
 
+- name: Create FreeIPA Users
+  import_playbook: playbooks/create_users.yml
