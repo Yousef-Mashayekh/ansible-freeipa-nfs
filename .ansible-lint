@@ -1,0 +1,8 @@
+---
+exclude_paths:
+  - collections/  # third-party code, not yours to lint
+
+skip_list:
+  - no-changed-when
+  - risky-file-permissions
+  - var-naming[no-role-prefix]

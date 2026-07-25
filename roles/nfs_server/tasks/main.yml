@@ -1,7 +1,7 @@
 ---
 # tasks file for roles/nfs_server
 
-- name: Install packages 
+- name: Install packages
   ansible.builtin.package:
     name: "{{ pkg.name }}"
     state: present
